@@ -1,0 +1,37 @@
+div.totalInfo {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    background-color: aquamarine;
+    width: 15rem;
+}
+
+.groupname {
+    font-weight: 600;
+}
+
+p {
+    margin: 0 0 1rem 0;
+}
+
+#los,
+#bundles {
+    display: initial;
+}
+
+#heads,
+#handpaws,
+#body,
+#feetpaws,
+#tail,
+#armsleeves,
+#fleeceTotalColors,
+#minkyTotalColors,
+#piercingsGroup {
+    display: none;
+}
+
+
+/* #fleeceTotalColors,
+#minkyTotalColors */

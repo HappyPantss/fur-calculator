@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+
+<body>
+    <div id="los">
+        <h1>Los:</h1>
+        <input data-group="Los:" placeholder="Head" name="product" value="1000.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Head + €1000.00<br>
+        <input data-group="Los:" placeholder="Handpaw" name="product" value="350.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Handpaw + €350.00<br>
+        <input data-group="Los:" placeholder="Feetpaw" name="product" value="300.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Feetpaw + €300.00<br>
+        <input data-group="Los:" placeholder="Tail" name="product" value="250.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Tail + €250.00<br>
+        <input data-group="Los:" placeholder="Body" name="product" value="800.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Body + €800.00<br>
+        <input data-group="Los:" placeholder="Armsleeves" name="product" value="200.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Armsleeves + €200.00<br>
+    </div>
+    <div id="bundles">
+        <h1>Bundels:</h1>
+        <input data-group="Bundle" id="headonly" placeholder="Head Only" name="product" value="1000.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Head Only + €1000.00<br>
+        <input data-group="Bundle" id="partial" placeholder="Partial" name="product" value="1600.00" type="checkbox" onclick="countNumbers();listOfOptions();" /> Partial + €1600.00<br>
+        <input data-group="Bundle" id="fullsuit" placeholder="Fullsuit" name="product" value="2800.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Fullsuit + €2800.00
+    </div>
+    <div id="colors">
+        <h1>Kleuren:</h1>
+        <h3>Fur kleuren:</h3>
+        <label for="quantity">Aantal kleuren:</label>
+        <input data-group="Kleuren" type="number" name="product" onchange="countNumbers();listOfOptions()" id="furColorTotal" min="1" max="10">
+
+        <h3>Fleece or Minky:</h3>
+        <div id="fleece">
+            <input id="fleeceChoice" placeholder="Fleece" type="checkbox" /> Fleece (€10.00 per color)<br>
+            <div id="fleeceTotalColors">
+                <label for="fleeceTotal">Aantal kleuren:</label>
+                <input data-group="Fleece" placeholder="Fleece" type="number" name="product" onchange="countNumbers();listOfOptions()" id="fleeceColorTotal" min="0" max="10">
+            </div>
+        </div>
+        <div id="minky">
+            <input id="minkyChoice" placeholder="Minky" type="checkbox" /> Minky (€15.00 per color)<br>
+            <div id="minkyTotalColors">
+                <label for="minkyTotal">Aantal kleuren:</label>
+                <input data-group="Minky" placeholder="Minky" type="number" name="product" onchange="countNumbers();listOfOptions()" id="minkyColorTotal" min="0" max="10">
+            </div>
+        </div>
+    </div>
+    <div id="heads">
+        <h1>HEAD:</h1>
+        <div class="keuzes">
+            <input data-group="Head:" placeholder="Bucket Head" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Bucket Head + €0.00<br>
+            <input data-group="Head:" placeholder="Moving Jaw" name="product" value="100.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Moving Jaw + €100.00<br>
+            <br>
+            <input data-group="Head:" placeholder="Ven holes" name="product" value="100.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Ven holes + €100.00<br>
+            <input data-group="Head:" placeholder="Eyelids (fixed position)" name="product" value="75.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Eyelids (fixed position) + €75.00
+            <input data-group="Head:" placeholder="Extra pair eyelids (fixed position)" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Extra pair + €50.00<br>
+            <input data-group="Head:" placeholder="Eyelids (multiple)" name="product" value="100.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Eyelids (multiple) + €100.00<br>
+            <input data-group="Head:" placeholder="Tongues" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Tongues + €50.00
+            <input data-group="Head:" placeholder="Extra pair Tongues" name="product" value="30.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Extra pair + €30.00<br>
+            <input data-group="Head:" placeholder="Fan" name="product" value="100.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Fan + €100.00<br>
+            <br>
+            <input data-group="Head:" placeholder="No hair" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> No hair + €0.00<br>
+            <input data-group="Head:" placeholder="HairPoof" name="product" value="25.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> HairPoof + €25.00<br>
+            <input data-group="Head:" placeholder="Long Hair fur" name="product" value="70.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Long Hair fur + €70.00<br>
+            <input data-group="Head:" placeholder="Kanekalon Hair" name="product" value="200.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Kanekalon Hair + €200.00<br>
+            <br>
+            <div id="piercings">
+                <input id="piercingChoice" placeholder="Piercing" type="checkbox" /> Piercings + €25.00<br>
+                <div id="piercingsGroup">
+                    <label for="piercingLabel">Total of piercings:</label>
+                    <input data-group="Piercings:" type="number" name="product" onchange="countNumbers();listOfOptions()" id="piercingsTotal" min="0" max="10">
+                </div>
+            </div>
+            <input data-group="Head:" placeholder="Finnen" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Finnen + €50.00<br>
+            <input data-group="Head:" placeholder="Hoorns (groot. per 2)" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Hoorns (groot. per 2) + €50.00<br>
+            <input data-group="Head:" placeholder="Neckfluff (kraag)" name="product" value="100.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Neckfluff (kraag) + €100.00<br>
+            <input data-group="Head:" placeholder="Glasses" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Glasses + €50.00<br>
+            <br>
+            <input data-group="Head:" placeholder="Custom eye shape" name="product" value="25.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Custom eye shape + €25.00<br>
+        </div>
+    </div>
+    <div id="handpaws">
+        <h1>HANDPAWS:</h1>
+        <div class="options">
+            <input data-group="Handpaws:" placeholder="Nails" name="product" value="25.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Nails + €25.00<br>
+            <input data-group="Handpaws:" placeholder="Pads" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Pads + €0.00<br>
+            <input data-group="Handpaws:" placeholder="No Pads" name="product" value="-25.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> No Pads - €25.00<br>
+            <input data-group="Handpaws:" placeholder="Custom design" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Custom design + €50.00<br>
+        </div>
+    </div>
+    <div id="tail">
+        <h1>TAIL:</h1>
+        <div class="options">
+            <input data-group="Tail:" placeholder="Stuffed" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Stuffed + €0.00<br>
+            <input data-group="Tail:" placeholder="MovingTail" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> MovingTail + €50.00<br>
+            <input data-group="Tail:" placeholder="Floordragger" name="product" value="100.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Floordragger + €100.00<br>
+            <input data-group="Tail:" placeholder="Nub" name="product" value="-75.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Nub - €75.00<br>
+            <br>
+            <input data-group="Tail:" placeholder="Zipper" name="product" value="20.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Zipper + €20.00<br>
+        </div>
+    </div>
+    <div id="body">
+        <h1>BODY:</h1>
+        <div class="options">
+            <input data-group="Body:" placeholder="Plantigrade" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Plantigrade + €0.00<br>
+            <input data-group="Body:" placeholder="Digitigrade (custom)" name="product" value="500.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Digitigrade (custom) + €500.00<br>
+            <input data-group="Body:" placeholder="Custom body shape" name="product" value="500.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Custom body shape + €500.00<br>
+            <input data-group="Body:" placeholder="Body shaving" name="product" value="75.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Body shaving + €75.00<br>
+            <br>
+            <input data-group="Body:" placeholder="Wings (small)" name="product" value="100.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Wings (small) + €100.00<br>
+            <input data-group="Body:" placeholder="Wings (big)" name="product" value="150.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Wings (big) + €150.00<br>
+            <p>Strepen en stippen komen met een hogere kost. Per ontwerp. 17 tot 20 per uur.</p>
+        </div>
+    </div>
+    <div id="feetpaws">
+        <h1 id="feetpawsTitle">FEETPAWS:</h1>
+        <div class="options">
+            <input data-group="Feetpaws:" placeholder="Outdoor" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Outdoor + €0.00<br>
+            <input data-group="Feetpaws:" placeholder="Indoor" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Indoor + €50.00<br>
+            <br>
+            <input data-group="Feetpaws:" placeholder="Sloffen" name="product" value="15.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Sloffen + €15.00<br>
+            <input data-group="Feetpaws:" placeholder="Schoenen" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Schoenen + €0.00<br>
+            <br>
+            <input data-group="Feetpaws:" placeholder="Nails" name="product" value="25.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Nails + €25.00<br>
+            <input data-group="Feetpaws:" placeholder="No pads" name="product" value="-25.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> No pads - €25.00<br>
+            <br>
+            <input data-group="Feetpaws:" placeholder="Slippers" name="product" value="30.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Slippers + €30.00<br>
+        </div>
+    </div>
+    <div id="armsleeves">
+        <h1>ARMSLEEVES:</h1>
+        <div class="options">
+            <input data-group="Armsleeves:" placeholder="1 elastiek" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> 1 elastiek + €0.00<br>
+            <input data-group="Armsleeves:" placeholder="2 elastieken" name="product" value="5.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> 2 elastieken + €5.00<br>
+        </div>
+    </div>
+    <div id="addons">
+        <h1>ADD ONS:</h1>
+        <div class="options">
+            <input data-group="Add ons:" placeholder="Bandana" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Bandana + €50.00<br>
+        </div>
+    </div>
+    <div class="totalInfo">
+        <p id="keuzes">You have selected:</p>
+        <span id="totaal">€0.00</span><br><br>
+        <button onclick="uncheckAll()">Uncheck All</button>
+        <!-- <input placeholder="Head" value="€0.00" readonly="readonly" type="text" name="total" /> -->
+        <!-- <button onclick="getValue()">Get Value</button> -->
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
+
+<!-- https://stackoverflow.com/questions/47582330/javascript-checkbox-sum -->
+<!-- https://www.geeksforgeeks.org/how-to-get-all-checked-values-of-checkbox-in-javascript/ -->
