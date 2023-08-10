@@ -118,7 +118,7 @@ function countNumbers() {
 function listOfOptions() {
     // Make a list of all options you choose
     const checkboxes = document.querySelectorAll('input[name="product"]');
-    const keuzes = document.getElementById("keuzes");
+    const choices = document.getElementById("choices");
     const groups = {};
 
     for (let i = 0; i < checkboxes.length; i++) {
@@ -177,8 +177,8 @@ function listOfOptions() {
     // const numberOption = `<li>Fur Color: ${furColorValue}</li><li>Fleece Colors: ${fleeceColorValue}</li>`;
 
 
-    keuzes.innerHTML = `<p>You have selected:</p>${result}`;
-    // keuzes.innerHTML += `<ul>${numberOption}</ul>`
+    choices.innerHTML = `<p>You have selected:</p>${result}`;
+    // choices.innerHTML += `<ul>${numberOption}</ul>`
     // console.log(numberOption)
 
 }
@@ -199,10 +199,30 @@ function listOfOptions() {
 //     }
 // }
 
-//Aanvinken van HEAD
+//Aanvinken van HEAD ONLY
 $(document).ready(function() {
     $('#headonly').change(function() {
-        $('#heads').fadeToggle(1);
+        $('#heads, #partialSection, #fullsuitSection').fadeToggle(1);
+    });
+});
+
+//Aanvinken van PARTIAL
+$(document).ready(function() {
+    $('#partial').change(function() {
+        $('#heads, #handpaws, #tail, #headonlySection, #fullsuitSection').fadeToggle(1);
+    });
+});
+
+//Aanvinken van FULLSUIT
+$(document).ready(function() {
+    $('#fullsuit').change(function() {
+        $('#heads, #body, #handpaws, #feetpaws, #tail, #headonlySection, #partialSection').fadeToggle(1);
+    });
+});
+//Aanvinken kleuren STOF
+$(document).ready(function() {
+    $('#buckethead').change(function() {
+        $('#bucketheadOnly').fadeToggle(1);
     });
 });
 
@@ -222,20 +242,6 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#piercingChoice').change(function() {
         $('#piercingsGroup').fadeToggle(1);
-    });
-});
-
-//Aanvinken van PARTIAL
-$(document).ready(function() {
-    $('#partial').change(function() {
-        $('#heads, #handpaws, #tail').fadeToggle(1);
-    });
-});
-
-//Aanvinken van FULLSUIT
-$(document).ready(function() {
-    $('#fullsuit').change(function() {
-        $('#heads, #body, #handpaws, #feetpaws, #tail').fadeToggle(1);
     });
 });
 
