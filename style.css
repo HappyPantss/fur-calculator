@@ -25,9 +25,7 @@ p {
     display: flex;
 } */
 
-
-/* #heads,
-#bucketheadOnly,
+#heads,
 #handpaws,
 #body,
 #feetpaws,
@@ -41,7 +39,7 @@ p {
 #extraTongues,
 #extraTongues2 {
     display: none;
-} */
+}
 
 
 /* #fleeceTotalColors,

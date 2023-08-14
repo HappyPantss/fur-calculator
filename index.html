@@ -32,7 +32,7 @@
         <h1>Colors:</h1>
         <h3>Fur colors:</h3>
         <label for="quantity">Total colors:</label>
-        <input data-group="Kleuren" type="number" name="product" onchange="countNumbers();listOfOptions()" id="furColorTotal" min="1" max="10">
+        <input data-group="Bundle" type="number" name="product" onchange="countNumbers();listOfOptions()" id="furColorTotal" placeholder="Fur colors" min="1" max="10">
 
         <h3>Fleece or Minky:</h3>
         <p>(for nose, nails, teeth etc)</p>
@@ -40,14 +40,14 @@
             <input id="fleeceChoice" placeholder="Fleece" type="checkbox" /> Fleece (€10.00 per color)<br>
             <div id="fleeceTotalColors">
                 <label for="fleeceTotal">Total colors Fleece:</label>
-                <input data-group="Fleece" placeholder="Fleece" type="number" name="product" onchange="countNumbers();listOfOptions()" id="fleeceColorTotal" min="0" max="10">
+                <input data-group="Bundle" placeholder="Fleece colors" type="number" name="product" onchange="countNumbers();listOfOptions()" id="fleeceColorTotal" min="0" max="10">
             </div>
         </div>
         <div id="minky">
             <input id="minkyChoice" placeholder="Minky" type="checkbox" /> Minky (€15.00 per color)<br>
             <div id="minkyTotalColors">
                 <label for="minkyTotal">Total colors Minky:</label>
-                <input data-group="Minky" placeholder="Minky" type="number" name="product" onchange="countNumbers();listOfOptions()" id="minkyColorTotal" min="0" max="10">
+                <input data-group="Bundle" placeholder="Minky colors" type="number" name="product" onchange="countNumbers();listOfOptions()" id="minkyColorTotal" min="0" max="10">
             </div>
         </div>
     </div>
@@ -61,8 +61,8 @@
             <input data-group="Head:" placeholder="Moving Jaw" name="product" value="100.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Moving Jaw + €100.00
 
             <h3>Extra ventilation:</h3>
-            <div id="bucketheadOnly">
-                <input data-group="Head:" placeholder="Ven holes" name="product" value="100.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Ventilation holes (buckethead only) + €100.00
+            <div>
+                <input data-group="Head:" placeholder="Ven holes" name="product" value="100.00" type="checkbox" onclick="countNumbers();listOfOptions()" id="bucketheadOnly" disabled="true" /> Ventilation holes (buckethead only) + €100.00
             </div>
             <input data-group="Head:" placeholder="Fan" name="product" value="100.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Fan + €100.00
 

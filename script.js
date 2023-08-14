@@ -132,35 +132,53 @@ function listOfOptions() {
         }
     }
 
+    // Handle number inputs
+    const numberInputs = document.querySelectorAll('input[type="number"][data-group]');
+    numberInputs.forEach((input) => {
+        const value = input.value;
+        if (value) {
+            const groupName = input.dataset.group || "Uncategorized";
 
-    // Get the selected values of Fur Color and Fleece Colors
-    const furColorInput = document.getElementById("furColorTotal");
-    const furColorValue = furColorInput.value;
+            // Special case for fur colors and fleece/minky colors
+            if (groupName === "Fur colors:" || groupName === "Fleece:" || groupName === "Minky:") {
+                groups["Bundle"].push(`${input.placeholder}: ${value}`);
+            } else {
+                if (!groups[groupName]) {
+                    groups[groupName] = [];
+                }
+                groups[groupName].push(`${input.placeholder}: ${value}`);
+            }
+        }
+    });
 
-    if (furColorValue) {
-        groups["Fur colors:"] = [furColorValue];
-    }
+    // // Get the selected values of Fur Color and Fleece Colors
+    // const furColorInput = document.getElementById("furColorTotal");
+    // const furColorValue = furColorInput.value;
 
-    const fleeceColorInput = document.getElementById("fleeceColorTotal");
-    const fleeceColorValue = fleeceColorInput.value;
+    // if (furColorValue) {
+    //     groups["Fur colors:"] = [furColorValue];
+    // }
 
-    if (fleeceColorValue) {
-        groups["Fleece colors:"] = [fleeceColorValue];
-    }
+    // const fleeceColorInput = document.getElementById("fleeceColorTotal");
+    // const fleeceColorValue = fleeceColorInput.value;
 
-    const minkyColorInput = document.getElementById("minkyColorTotal");
-    const minkyColorValue = minkyColorInput.value;
+    // if (fleeceColorValue) {
+    //     groups["Fleece colors:"] = [fleeceColorValue];
+    // }
 
-    if (minkyColorValue) {
-        groups["Minky colors:"] = [minkyColorValue];
-    }
+    // const minkyColorInput = document.getElementById("minkyColorTotal");
+    // const minkyColorValue = minkyColorInput.value;
 
-    const piercingsInput = document.getElementById("piercingsTotal");
-    const piercingsValue = piercingsInput.value;
+    // if (minkyColorValue) {
+    //     groups["Minky colors:"] = [minkyColorValue];
+    // }
 
-    if (piercingsValue) {
-        groups["Piercings total:"] = [piercingsValue];
-    }
+    // const piercingsInput = document.getElementById("piercingsTotal");
+    // const piercingsValue = piercingsInput.value;
+
+    // if (piercingsValue) {
+    //     groups["Piercings total:"] = [piercingsValue];
+    // }
 
     let result = "";
 
@@ -211,7 +229,7 @@ $(document).ready(function() {
     //Aanvinken van FULLSUIT
     $('#fullsuit').change(function() {
         $('#heads, #body, #handpaws, #feetpaws, #tail, #headonlySection, #partialSection').fadeToggle(1);
-    }); //Aanvinken kleuren STOF
+    });
     $('#buckethead').change(function() {
         $('#bucketheadOnly').fadeToggle(1);
     });
