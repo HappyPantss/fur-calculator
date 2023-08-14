@@ -20,7 +20,13 @@ p {
     display: initial;
 }
 
-#heads,
+
+/* #eyelidsChoice {
+    display: flex;
+} */
+
+
+/* #heads,
 #bucketheadOnly,
 #handpaws,
 #body,
@@ -29,9 +35,13 @@ p {
 #armsleeves,
 #fleeceTotalColors,
 #minkyTotalColors,
-#piercingsGroup {
+#piercingsGroup,
+#extraEyelids,
+#extraEyelids2,
+#extraTongues,
+#extraTongues2 {
     display: none;
-}
+} */
 
 
 /* #fleeceTotalColors,

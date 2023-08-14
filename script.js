@@ -199,49 +199,43 @@ function listOfOptions() {
 //     }
 // }
 
-//Aanvinken van HEAD ONLY
 $(document).ready(function() {
-    $('#headonly').change(function() {
-        $('#heads, #partialSection, #fullsuitSection').fadeToggle(1);
-    });
-});
-
-//Aanvinken van PARTIAL
-$(document).ready(function() {
+    //Aanvinken van PARTIAL
     $('#partial').change(function() {
         $('#heads, #handpaws, #tail, #headonlySection, #fullsuitSection').fadeToggle(1);
     });
-});
-
-//Aanvinken van FULLSUIT
-$(document).ready(function() {
+    //Aanvinken van HEAD ONLY
+    $('#headonly').change(function() {
+        $('#heads, #partialSection, #fullsuitSection').fadeToggle(1);
+    });
+    //Aanvinken van FULLSUIT
     $('#fullsuit').change(function() {
         $('#heads, #body, #handpaws, #feetpaws, #tail, #headonlySection, #partialSection').fadeToggle(1);
-    });
-});
-//Aanvinken kleuren STOF
-$(document).ready(function() {
+    }); //Aanvinken kleuren STOF
     $('#buckethead').change(function() {
         $('#bucketheadOnly').fadeToggle(1);
     });
-});
-
-//Aanvinken kleuren STOF
-$(document).ready(function() {
+    //Aanvinken kleuren STOF
     $('#fleeceChoice').change(function() {
         $('#fleeceTotalColors, #minky').fadeToggle(1);
     });
-});
-
-$(document).ready(function() {
     $('#minkyChoice').change(function() {
         $('#minkyTotalColors, #fleece').fadeToggle(1);
     });
-});
-
-$(document).ready(function() {
     $('#piercingChoice').change(function() {
         $('#piercingsGroup').fadeToggle(1);
+    });
+    $('#eyelids').change(function() {
+        $('#extraEyelids').fadeToggle(1);
+    });
+    $('#extraEyelids').change(function() {
+        $('#extraEyelids2').fadeToggle(1);
+    });
+    $('#tongues').change(function() {
+        $('#extraTongues').fadeToggle(1);
+    });
+    $('#extraTongues').change(function() {
+        $('#extraTongues2').fadeToggle(1);
     });
 });
 

@@ -56,7 +56,7 @@
         <div class="keuzes">
             <h3>Type of head:</h3>
             <div id="buckethead">
-                <input data-group="Head:" placeholder="Bucket Head" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Bucket Head + €0.00
+                <input data-group="Head:" placeholder="Bucket Head (static jaw)" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Bucket Head + €0.00
             </div>
             <input data-group="Head:" placeholder="Moving Jaw" name="product" value="100.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Moving Jaw + €100.00
 
@@ -67,13 +67,27 @@
             <input data-group="Head:" placeholder="Fan" name="product" value="100.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Fan + €100.00
 
             <h3>Magnetic Eyelids:</h3>
-            <input data-group="Head:" placeholder="Eyelids (fixed position)" name="product" value="75.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Eyelids (fixed position) + €75.00
-            <input data-group="Head:" placeholder="Extra pair eyelids (fixed position)" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Extra pair + €50.00<br>
+            <div id="eyelidsChoice">
+                <input data-group="Head:" placeholder="Eyelids (fixed position)" name="product" value="75.00" type="checkbox" onclick="countNumbers();listOfOptions()" id="eyelids" /> Eyelids (fixed position) + €75.00
+                <div id="extraEyelids">
+                    <input data-group="Head:" placeholder="Fixed position 2 pairs" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Fixed position 2 pairs + €50.00
+                </div>
+                <div id="extraEyelids2">
+                    <input data-group="Head:" placeholder="Fixed position 3 pairs" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Fixed position 3 pairs + €50.00
+                </div>
+            </div>
             <input data-group="Head:" placeholder="Eyelids (multiple)" name="product" value="100.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Eyelids (multiple positions) + €100.00
 
             <h3>Magnetic Tongues:</h3>
-            <input data-group="Head:" placeholder="Tongues" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Tongues + €50.00
-            <input data-group="Head:" placeholder="Extra pair Tongues" name="product" value="30.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Extra pair + €30.00
+            <div id="tonguesChoice">
+                <input data-group="Head:" placeholder="2 Magnetic Tongues (1 short, 1 long)" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" id="tongues" /> 2 Magnetic Tongues (1 short, 1 long) + €50.00
+                <div id="extraTongues">
+                    <input data-group="Head:" placeholder="Extra tongue mid size" name="product" value="30.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> + Extra tongue mid size + €30.00
+                </div>
+                <div id="extraTongues2">
+                    <input data-group="Head:" placeholder="Extra tongue extra long" name="product" value="30.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> + Extra tongue extra long + €30.00
+                </div>
+            </div>
 
             <h3>Fursuit hair:</h3>
             <input data-group="Head:" placeholder="No hair" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> No hair + €0.00<br>
