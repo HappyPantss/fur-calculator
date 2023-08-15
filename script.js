@@ -142,6 +142,8 @@ function listOfOptions() {
             // Special case for fur colors and fleece/minky colors
             if (groupName === "Fur colors:" || groupName === "Fleece:" || groupName === "Minky:") {
                 groups["Bundle"].push(`${input.placeholder}: ${value}`);
+            } else if (groupName === "Piercings:") {
+                groups["Head"].push(`${input.placeholder}: ${value}`);
             } else {
                 if (!groups[groupName]) {
                     groups[groupName] = [];
@@ -250,11 +252,11 @@ $(document).ready(function() {
         $('#extraEyelids2').fadeToggle(1);
     });
     $('#tongues').change(function() {
-        $('#extraTongues').fadeToggle(1);
+        $('#extraTongues, #extraTongues2').fadeToggle(1);
     });
-    $('#extraTongues').change(function() {
-        $('#extraTongues2').fadeToggle(1);
-    });
+    // $('#extraTongues').change(function() {
+    //     $('#extraTongues2').fadeToggle(1);
+    // });
 });
 
 function uncheckAll() {
