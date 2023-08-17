@@ -320,6 +320,23 @@ $(document).ready(function() {
         $('#digitigradeChoice').fadeToggle(1);
     });
 
+    // Feetpaws type
+    $('#indoor').change(function() {
+        $('#outdoor').fadeToggle(1);
+        $('#shoesBase').fadeToggle(1);
+    });
+    $('#outdoor').change(function() {
+        $('#indoor').fadeToggle(1);
+    });
+
+    // Feetpaws base
+    $('#slippersBase').change(function() {
+        $('#shoesBase').fadeToggle(1);
+    });
+    $('#shoesBase').change(function() {
+        $('#slippersBase').fadeToggle(1);
+    });
+
     // $('#extraTongues').change(function() {
     //     $('#extraTongues2').fadeToggle(1);
     // });
