@@ -37,7 +37,9 @@ p {
 #extraEyelids,
 #extraEyelids2,
 #extraTongues,
-#extraTongues2 {
+#extraTongues2,
+#feetpawsExtra,
+#tailExtra {
     display: none;
 }
 

@@ -167,34 +167,65 @@
             <input data-group="Body:" placeholder="Wings (big)" name="product" value="150.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Wings (big) + €150.00<br>
             <p>Stripes and dots come with a higher cost by design. €17.00 to €20.00 an hour.</p>
         </div>
+        <div id="feetpaws">
+            <h1 id="feetpawsTitle">Feetpaws:</h1>
+            <div class="options">
+                <h3>Feetpaw type:</h3>
+                <div id="outdoor">
+                    <input data-group="Feetpaws:" placeholder="Outdoor" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Outdoor + €0.00
+                </div>
+                <div id="indoor">
+                    <input data-group="Feetpaws:" placeholder="Indoor" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Indoor + €50.00
+                </div>
+
+                <h3>Feetpaw base:</h3>
+                <div id="slippersBase">
+                    <input data-group="Feetpaws:" placeholder="Slippers (sloffen/ pantoffels)" name="product" value="15.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Slippers (sloffen/ pantoffels) + €15.00
+                </div>
+                <div id="shoesBase">
+                    <input data-group="Feetpaws:" placeholder="Shoes" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Shoes + €0.00
+                </div>
+
+                <h3>Nails:</h3>
+                <input data-group="Feetpaws:" placeholder="Nails" name="product" value="25.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Nails + €25.00
+
+                <h3>Pawpads (indoor only):</h3>
+                <input data-group="Feetpaws:" placeholder="No pads" name="product" value="-25.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> No pads - €25.00
+
+                <h3>Fursuit slippers? (recommended with indoor):</h3>
+                <input data-group="Feetpaws:" placeholder="Slippers" name="product" value="30.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Slippers + €30.00
+
+                <h3>Do you want an extra pair of Feetpaws?:</h3>
+                <input data-group="Feetpaws:" placeholder="Extra Set of Feetpaws" name="product" value="300.00" type="checkbox" onclick="countNumbers();listOfOptions()" id="feetpawsExtraYes" /> Yes + €300.00 </div>
+        </div>
     </div>
-    <div id="feetpaws">
-        <h1 id="feetpawsTitle">Feetpaws:</h1>
+    <div id="feetpawsExtra">
+        <h1 id="feetpawsTitle">Extra Set of Feetpaws:</h1>
         <div class="options">
             <h3>Feetpaw type:</h3>
             <div id="outdoor">
-                <input data-group="Feetpaws:" placeholder="Outdoor" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Outdoor + €0.00
+                <input data-group="Extra Pair of Feetpaws:" placeholder="Outdoor" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Outdoor + €0.00
             </div>
             <div id="indoor">
-                <input data-group="Feetpaws:" placeholder="Indoor" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Indoor + €50.00
+                <input data-group="Extra Pair of Feetpaws:" placeholder="Indoor" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Indoor + €50.00
             </div>
 
             <h3>Feetpaw base:</h3>
             <div id="slippersBase">
-                <input data-group="Feetpaws:" placeholder="Slippers (sloffen/ pantoffels)" name="product" value="15.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Slippers (sloffen/ pantoffels) + €15.00
+                <input data-group="Extra Pair of Feetpaws:" placeholder="Slippers (sloffen/ pantoffels)" name="product" value="15.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Slippers (sloffen/ pantoffels) + €15.00
             </div>
             <div id="shoesBase">
-                <input data-group="Feetpaws:" placeholder="Shoes" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Shoes + €0.00
+                <input data-group="Extra Pair of Feetpaws:" placeholder="Shoes" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Shoes + €0.00
             </div>
 
             <h3>Nails:</h3>
-            <input data-group="Feetpaws:" placeholder="Nails" name="product" value="25.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Nails + €25.00
+            <input data-group="Extra Pair of Feetpaws:" placeholder="Nails" name="product" value="25.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Nails + €25.00
 
             <h3>Pawpads (indoor only):</h3>
-            <input data-group="Feetpaws:" placeholder="No pads" name="product" value="-25.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> No pads - €25.00
+            <input data-group="Extra Pair of Feetpaws:" placeholder="No pads" name="product" value="-25.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> No pads - €25.00
 
             <h3>Fursuit slippers? (recommended with indoor):</h3>
-            <input data-group="Feetpaws:" placeholder="Slippers" name="product" value="30.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Slippers + €30.00<br>
+            <input data-group="Extra Pair of Feetpaws:" placeholder="Slippers" name="product" value="30.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Slippers + €30.00<br>
         </div>
     </div>
     <div id="tail">
@@ -207,7 +238,23 @@
             <input data-group="Tail:" placeholder="Nub (Small, always stuffed)" name="product" value="-75.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Nub (Small, always stuffed) - €75.00
 
             <h3>Zipper to remove stuffing:</h3>
-            <input data-group="Tail:" placeholder="Zipper" name="product" value="20.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Zipper + €20.00<br>
+            <input data-group="Tail:" placeholder="Zipper" name="product" value="20.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Zipper + €20.00
+
+            <h3>Do you want an extra Tail?:</h3>
+            <input data-group="Tail:" placeholder="Extra Tail" name="product" value="250.00" type="checkbox" onclick="countNumbers();listOfOptions()" id="tailExtraYes" /> Yes + €250.00 </div>
+    </div>
+    </div>
+    <div id="tailExtra">
+        <h1>Extra Tail:</h1>
+        <div class="options">
+            <h3>Type of tail:</h3>
+            <input data-group="Extra Tail:" placeholder="Stuffed" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Stuffed + €0.00<br>
+            <input data-group="Extra Tail:" placeholder="MovingTail" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> MovingTail + €50.00<br>
+            <input data-group="Extra Tail:" placeholder="Floordragger (Always stuffed)" name="product" value="100.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Floordragger (Always stuffed) + €100.00<br>
+            <input data-group="Extra Tail:" placeholder="Nub (Small, always stuffed)" name="product" value="-75.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Nub (Small, always stuffed) - €75.00
+
+            <h3>Zipper to remove stuffing:</h3>
+            <input data-group="Extra Tail:" placeholder="Zipper" name="product" value="20.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Zipper + €20.00
         </div>
     </div>
     <div id="addons">

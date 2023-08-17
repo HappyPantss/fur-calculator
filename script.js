@@ -325,16 +325,26 @@ $(document).ready(function() {
         $('#outdoor').fadeToggle(1);
         $('#shoesBase').fadeToggle(1);
     });
-    $('#outdoor').change(function() {
-        $('#indoor').fadeToggle(1);
-    });
 
     // Feetpaws base
-    $('#slippersBase').change(function() {
-        $('#shoesBase').fadeToggle(1);
+    $('#outdoor').change(function() {
+        $('#indoor').fadeToggle(1);
+
+        $('#slippersBase').change(function() {
+            $('#shoesBase').fadeToggle(1);
+        });
+        $('#shoesBase').change(function() {
+            $('#slippersBase').fadeToggle(1);
+        });
     });
-    $('#shoesBase').change(function() {
-        $('#slippersBase').fadeToggle(1);
+
+    $('#feetpawsExtraYes').change(function() {
+        $('#feetpawsExtra').fadeToggle(1);
+    });
+
+
+    $('#tailExtraYes').change(function() {
+        $('#tailExtra').fadeToggle(1);
     });
 
     // $('#extraTongues').change(function() {
