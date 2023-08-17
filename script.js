@@ -20,6 +20,9 @@ function countNumbers() {
     var fleeceColor = document.getElementById("fleeceColorTotal").value;
     var minkyColor = document.getElementById("minkyColorTotal").value;
     var piercingTotal = document.getElementById("piercingsTotal").value;
+    const eyelids = document.getElementById('eyelids');
+    const checkboxEyelid = document.getElementById('extraEyelidsBox');
+    const checkboxEyelid2 = document.getElementById('extraEyelidsBox2');
 
     var input = document.getElementsByName("product");
     var totalAmount = 0;
@@ -220,42 +223,109 @@ function listOfOptions() {
 // }
 
 $(document).ready(function() {
-    //Aanvinken van PARTIAL
+    // Aanvinken van PARTIAL
     $('#partial').change(function() {
         $('#heads, #handpaws, #tail, #headonlySection, #fullsuitSection').fadeToggle(1);
     });
-    //Aanvinken van HEAD ONLY
+
+    // Aanvinken van HEAD ONLY
     $('#headonly').change(function() {
         $('#heads, #partialSection, #fullsuitSection').fadeToggle(1);
     });
-    //Aanvinken van FULLSUIT
+
+    // Aanvinken van FULLSUIT
     $('#fullsuit').change(function() {
         $('#heads, #body, #handpaws, #feetpaws, #tail, #headonlySection, #partialSection').fadeToggle(1);
     });
-    $('#buckethead').change(function() {
-        $('#bucketheadOnly').fadeToggle(1);
+    $('#bucketheadChoice').change(function() {
+        $('#movingJawChoice').fadeToggle(1);
+        $('#bucketheadOnly').prop('disabled', (i, v) => !v);
     });
-    //Aanvinken kleuren STOF
+    $('#movingJawChoice').change(function() {
+        $('#bucketheadChoice').fadeToggle(1);
+    });
+
+    // Aanvinken kleuren STOF
     $('#fleeceChoice').change(function() {
         $('#fleeceTotalColors, #minky').fadeToggle(1);
     });
     $('#minkyChoice').change(function() {
         $('#minkyTotalColors, #fleece').fadeToggle(1);
     });
+
+    // Aanvinken piercings
     $('#piercingChoice').change(function() {
         $('#piercingsGroup').fadeToggle(1);
     });
+    // Aanvinken eyelids
     $('#eyelids').change(function() {
         $('#extraEyelids').fadeToggle(1);
+        $('#multipleEyelidsChoice').fadeToggle(1);
+    });
+    // Extra tongues
+    $('#tongues').change(function() {
+        $('#extraTongues, #extraTongues2').fadeToggle(1);
+    });
+
+    // VERWIJDER ALLE ANDERE OPTIES OM HET MAKKELIJKER TE MAKEN
+    // Eyelids
+    $('#multipleEyelidsChoice').change(function() {
+        $('#fixedEyelidsChoice').fadeToggle(1);
     });
     $('#extraEyelids').change(function() {
         $('#extraEyelids2').fadeToggle(1);
     });
-    $('#tongues').change(function() {
-        $('#extraTongues, #extraTongues2').fadeToggle(1);
+
+    // Paw pads
+    $('#handpawsPadsChoice').change(function() {
+        $('#handpawsNoPadsChoice').fadeToggle(1);
     });
+    $('#handpawsNoPadsChoice').change(function() {
+        $('#handpawsPadsChoice').fadeToggle(1);
+    });
+
+    // Hair
+    $('#noHairChoice').change(function() {
+        $('#hairPoofChoice').fadeToggle(1);
+        $('#longHairChoice').fadeToggle(1);
+        $('#kanekalonHairChoice').fadeToggle(1);
+    });
+    $('#hairPoofChoice').change(function() {
+        $('#noHairChoice').fadeToggle(1);
+        $('#longHairChoice').fadeToggle(1);
+        $('#kanekalonHairChoice').fadeToggle(1);
+    });
+    $('#longHairChoice').change(function() {
+        $('#noHairChoice').fadeToggle(1);
+        $('#hairPoofChoice').fadeToggle(1);
+        $('#kanekalonHairChoice').fadeToggle(1);
+    });
+    $('#kanekalonHairChoice').change(function() {
+        $('#noHairChoice').fadeToggle(1);
+        $('#hairPoofChoice').fadeToggle(1);
+        $('#longHairChoice').fadeToggle(1);
+    });
+
+    // Body type
+    $('#plantigradeChoice').change(function() {
+        $('#digitigradeChoice').fadeToggle(1);
+        $('#customBodyChoice').fadeToggle(1);
+    });
+    $('#digitigradeChoice').change(function() {
+        $('#plantigradeChoice').fadeToggle(1);
+        $('#customBodyChoice').fadeToggle(1);
+    });
+    $('#customBodyChoice').change(function() {
+        $('#plantigradeChoice').fadeToggle(1);
+        $('#digitigradeChoice').fadeToggle(1);
+    });
+
     // $('#extraTongues').change(function() {
     //     $('#extraTongues2').fadeToggle(1);
+    // });
+    // $('#extraEyelidsBox2').change(function() {
+    //     $('#extraEyelids').fadeToggle(1);
+    //     $('#extraEyelidsBox').prop("checked", false);
     // });
 });
 
