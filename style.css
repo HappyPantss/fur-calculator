@@ -28,9 +28,14 @@ p {
 #heads,
 #handpaws,
 #body,
-#feetpaws,
+
+/* #feetpaws,
+#feetpaws>#feetpawsOptions,
+#feetpaws>#feetpawsPartialOnly, */
+
 #tail,
 #armsleeves,
+#armsleeves>#armsleevesOptions,
 #fleeceTotalColors,
 #minkyTotalColors,
 #piercingsGroup,
@@ -39,7 +44,10 @@ p {
 #extraTongues,
 #extraTongues2,
 #feetpawsExtra,
-#tailExtra {
+#tailExtra,
+.tailFullsuit,
+#extraFeetpair,
+#questionExtraTail {
     display: none;
 }
 

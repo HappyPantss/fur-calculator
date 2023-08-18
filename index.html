@@ -125,13 +125,6 @@
             <input data-group="Head:" placeholder="Custom eye shape" name="product" value="25.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Custom eye shape + €25.00<br>
         </div>
     </div>
-    <div id="armsleeves">
-        <h1>Armsleeves:</h1>
-        <div class="options">
-            <input data-group="Armsleeves:" placeholder="1 elastic" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> 1 elastic + €0.00<br>
-            <input data-group="Armsleeves:" placeholder="2 elastics" name="product" value="5.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> 2 elastics + €5.00<br>
-        </div>
-    </div>
     <div id="handpaws">
         <h1>Handpaws:</h1>
         <div class="options">
@@ -142,7 +135,16 @@
             <div id="handpawsNoPadsChoice">
                 <input data-group="Handpaws:" placeholder="No Pads" name="product" value="-25.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> No Pads - €25.00
             </div>
-            <input data-group="Handpaws:" placeholder="Custom design" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Custom design + €50.00<br>
+            <input data-group="Handpaws:" placeholder="Custom design" name="product" value="50.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Custom design + €50.00
+        </div>
+    </div>
+
+    <div id="armsleeves">
+        <h1>Armsleeves:</h1>
+        <input data-group="Armsleeves:" placeholder="Plus Armsleeves" name="product" value="200.00" type="checkbox" onclick="countNumbers()" id="armsleevesYes" /> Armsleeves? + €200.00<br>
+        <div class="options" id="armsleevesOptions">
+            <input data-group="Armsleeves:" placeholder="1 elastic" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> 1 elastic + €0.00<br>
+            <input data-group="Armsleeves:" placeholder="2 elastics" name="product" value="5.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> 2 elastics + €5.00<br>
         </div>
     </div>
     <div id="body">
@@ -169,7 +171,11 @@
         </div>
         <div id="feetpaws">
             <h1 id="feetpawsTitle">Feetpaws:</h1>
-            <div class="options">
+            <div id="feetpawsPartialOnly">
+                <h3>Do you want an extra pair of Feetpaws?:</h3>
+                <input data-group="Feetpaws:" placeholder="Plus extra set of Feetpaws" name="product" value="300.00" type="checkbox" onclick="countNumbers();listOfOptions()" id="feetpawsExtraYes" /> Yes + €300.00
+            </div>
+            <div class="options" id="feetpawsOptions">
                 <h3>Feetpaw type:</h3>
                 <div id="outdoor">
                     <input data-group="Feetpaws:" placeholder="Outdoor" name="product" value="0.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Outdoor + €0.00
@@ -195,8 +201,11 @@
                 <h3>Fursuit slippers? (recommended with indoor):</h3>
                 <input data-group="Feetpaws:" placeholder="Slippers" name="product" value="30.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Slippers + €30.00
 
-                <h3>Do you want an extra pair of Feetpaws?:</h3>
-                <input data-group="Feetpaws:" placeholder="Extra Set of Feetpaws" name="product" value="300.00" type="checkbox" onclick="countNumbers();listOfOptions()" id="feetpawsExtraYes" /> Yes + €300.00 </div>
+                <div id="extraFeetpair">
+                    <h3>Do you want an extra pair of Feetpaws?:</h3>
+                    <input data-group="Feetpaws:" placeholder="Plus extra set of Feetpaws" name="product" value="300.00" type="checkbox" onclick="countNumbers();listOfOptions()" id="feetpawsExtraYes" /> Yes + €300.00
+                </div>
+            </div>
         </div>
     </div>
     <div id="feetpawsExtra">
@@ -240,8 +249,18 @@
             <h3>Zipper to remove stuffing:</h3>
             <input data-group="Tail:" placeholder="Zipper" name="product" value="20.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Zipper + €20.00
 
-            <h3>Do you want an extra Tail?:</h3>
-            <input data-group="Tail:" placeholder="Extra Tail" name="product" value="250.00" type="checkbox" onclick="countNumbers();listOfOptions()" id="tailExtraYes" /> Yes + €250.00 </div>
+            <div class="tailFullsuit">
+                <h3>Tail attached to body?:</h3>
+                <input data-group="Tail:" placeholder="Yes, attached to body" name="product" value="20.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Yes, attached to body + €20.00<br>
+                <input data-group="Tail:" placeholder="Yes, with zipper" name="product" value="20.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Yes, with zipper + €20.00<br>
+                <input data-group="Tail:" placeholder="Yes, attached to body" name="product" value="0" type="checkbox" onclick="countNumbers();listOfOptions()" /> No + €0.00
+            </div>
+
+            <div id="questionExtraTail">
+                <h3>Do you want an extra Tail?:</h3>
+                <input data-group="Tail:" placeholder="Plus extra Tail" name="product" value="250.00" type="checkbox" onclick="countNumbers();listOfOptions()" id="tailExtraYes" /> Yes + €250.00
+            </div>
+        </div>
     </div>
     </div>
     <div id="tailExtra">
@@ -255,6 +274,13 @@
 
             <h3>Zipper to remove stuffing:</h3>
             <input data-group="Extra Tail:" placeholder="Zipper" name="product" value="20.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Zipper + €20.00
+
+            <div class="tailFullsuit">
+                <h3>Tail attached to body?:</h3>
+                <input data-group="Extra Tail:" placeholder="Yes, attached to body" name="product" value="20.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Yes, attached to body + €20.00<br>
+                <input data-group="Extra Tail:" placeholder="Yes, with zipper" name="product" value="20.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Yes, with zipper + €20.00<br>
+                <input data-group="Extra Tail:" placeholder="Yes, attached to body" name="product" value="0" type="checkbox" onclick="countNumbers();listOfOptions()" /> No + €0.00
+            </div>
         </div>
     </div>
     <div id="addons">

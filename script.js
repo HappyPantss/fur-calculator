@@ -225,7 +225,7 @@ function listOfOptions() {
 $(document).ready(function() {
     // Aanvinken van PARTIAL
     $('#partial').change(function() {
-        $('#heads, #handpaws, #tail, #headonlySection, #fullsuitSection').fadeToggle(1);
+        $('#heads, #handpaws, #tail, #headonlySection, #fullsuitSection, #armsleeves, #feetpaws, #feetpawsPartialOnly').fadeToggle(1);
     });
 
     // Aanvinken van HEAD ONLY
@@ -235,7 +235,7 @@ $(document).ready(function() {
 
     // Aanvinken van FULLSUIT
     $('#fullsuit').change(function() {
-        $('#heads, #body, #handpaws, #feetpaws, #tail, #headonlySection, #partialSection').fadeToggle(1);
+        $('#heads, #body, #handpaws, #feetpaws, #feetpawsOptions, #tail, #headonlySection, #partialSection, .tailFullsuit, #extraFeetpair, #questionExtraTail').fadeToggle(1);
     });
     $('#bucketheadChoice').change(function() {
         $('#movingJawChoice').fadeToggle(1);
@@ -345,6 +345,10 @@ $(document).ready(function() {
 
     $('#tailExtraYes').change(function() {
         $('#tailExtra').fadeToggle(1);
+    });
+
+    $('#armsleevesYes').change(function() {
+        $('#armsleevesOptions').fadeToggle(1);
     });
 
     // $('#extraTongues').change(function() {
