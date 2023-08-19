@@ -5,6 +5,8 @@ div.totalInfo {
     padding: 1rem;
     background-color: aquamarine;
     width: 15rem;
+    max-height: 100vh;
+    overflow: auto;
 }
 
 .groupname {
@@ -28,13 +30,11 @@ p {
 #heads,
 #handpaws,
 #body,
-
-/* #feetpaws,
-#feetpaws>#feetpawsOptions,
-#feetpaws>#feetpawsPartialOnly, */
-
+#feetpaws,
 #tail,
+#feetpawsOptions,
 #armsleeves,
+#feetpawsPartialOnly,
 #armsleeves>#armsleevesOptions,
 #fleeceTotalColors,
 #minkyTotalColors,

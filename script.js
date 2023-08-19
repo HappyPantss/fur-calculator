@@ -1,17 +1,3 @@
-// function hideOrShow() {
-//     var x = document.getElementById("fleeceChoice");
-//     var y = document.getElementById("fleeceTotalColors");
-//     var z = document.getElementById("minky");
-//     var z = document.getElementById("minky");
-//     if (x.checked) {
-//         y.style.display = "block";
-//         z.style.display = "none";
-//     } else {
-//         y.style.display = "none";
-//         z.style.display = "block";
-//     }
-// }
-
 let total = 0;
 const selectedOptions = [];
 
@@ -63,14 +49,6 @@ function countNumbers() {
         totalAmount += fleeceColorValues[fleeceColor];
         totaal.innerHTML = "€" + parseFloat(totalAmount);
     }
-
-    // if (fleeceColor in fleeceColorValues) {
-    //     totalAmount += fleeceColorValues[fleeceColor];
-    //     // totaal.innerHTML = "€" + parseFloat(totalAmount);
-    //     console.log("fleeceColor total:", parseFloat(totalAmount));
-    //     console.log("fleeceColor:", fleeceColor);
-    //     console.log("fleeceColorValues:", fleeceColorValues);
-    // }
 
     const minkyColorValues = {
         1: 15,
@@ -156,35 +134,6 @@ function listOfOptions() {
         }
     });
 
-    // // Get the selected values of Fur Color and Fleece Colors
-    // const furColorInput = document.getElementById("furColorTotal");
-    // const furColorValue = furColorInput.value;
-
-    // if (furColorValue) {
-    //     groups["Fur colors:"] = [furColorValue];
-    // }
-
-    // const fleeceColorInput = document.getElementById("fleeceColorTotal");
-    // const fleeceColorValue = fleeceColorInput.value;
-
-    // if (fleeceColorValue) {
-    //     groups["Fleece colors:"] = [fleeceColorValue];
-    // }
-
-    // const minkyColorInput = document.getElementById("minkyColorTotal");
-    // const minkyColorValue = minkyColorInput.value;
-
-    // if (minkyColorValue) {
-    //     groups["Minky colors:"] = [minkyColorValue];
-    // }
-
-    // const piercingsInput = document.getElementById("piercingsTotal");
-    // const piercingsValue = piercingsInput.value;
-
-    // if (piercingsValue) {
-    //     groups["Piercings total:"] = [piercingsValue];
-    // }
-
     let result = "";
 
     for (const groupName in groups) {
@@ -197,30 +146,8 @@ function listOfOptions() {
         }
     }
 
-    // const numberOption = `<li>Fur Color: ${furColorValue}</li><li>Fleece Colors: ${fleeceColorValue}</li>`;
-
-
     choices.innerHTML = `<p>You have selected:</p>${result}`;
-    // choices.innerHTML += `<ul>${numberOption}</ul>`
-    // console.log(numberOption)
-
 }
-
-// function furColors() {
-//     var inputs = document.getElementsByName("product");
-//     var total = 0;
-//     // var standardTotal = [1, 2, 3];
-//     var totaal = document.getElementById("totaal");
-//     for (var i = 0; i < inputs.length; i++) {
-//         if (inputs[i].checked) {
-//             total += parseFloat(inputs[i].value);
-//         }
-//     }
-//     if (parseFloat(total) === 1) { // Use '===' for comparison
-//         console.log(total);
-//         totaal.innerHTML = total + 60;
-//     }
-// }
 
 $(document).ready(function() {
     // Aanvinken van PARTIAL
@@ -342,6 +269,10 @@ $(document).ready(function() {
         $('#feetpawsExtra').fadeToggle(1);
     });
 
+    $('#feetpawsPartialYes').change(function() {
+        $('#feetpawsOptions').fadeToggle(1);
+    });
+
 
     $('#tailExtraYes').change(function() {
         $('#tailExtra').fadeToggle(1);
@@ -351,34 +282,60 @@ $(document).ready(function() {
         $('#armsleevesOptions').fadeToggle(1);
     });
 
-    // $('#extraTongues').change(function() {
-    //     $('#extraTongues2').fadeToggle(1);
-    // });
-    // $('#extraEyelidsBox2').change(function() {
-    //     $('#extraEyelids').fadeToggle(1);
-    //     $('#extraEyelidsBox').prop("checked", false);
-    // });
+    $('#feetpawsYes').change(function() {
+        $('#feetpawsOptions').fadeToggle(1);
+    });
 });
 
 function uncheckAll() {
-    const checkboxes = document.querySelectorAll('input[name="product"]');
-    checkboxes.forEach((checkbox) => {
-        checkbox.checked = false;
-    });
+    window.location.reload();
+}
 
+// function uncheckFullsuit() {
+//     const checkbox = document.getElementById("fullsuit");
+
+//     if (checkbox.checked == false) {
+//         window.location.reload();
+//     };
+// }
+
+function uncheckFullsuit() {
+    const checkboxFullsuit = document.getElementById("fullsuit");
+    const furColorInput = document.getElementById("furColorTotal");
+    const fleeceColorInput = document.getElementById("fleeceColorTotal");
+    const minkyColorInput = document.getElementById("minkyColorTotal");
+
+    if (!checkboxFullsuit.checked) {
+        // Uncheck all options related to Fullsuit
+        const fullsuitOptions = document.querySelectorAll('input[data-group="Head:"], input[data-group="Handpaws:"]');
+        fullsuitOptions.forEach((option) => {
+            option.checked = false;
+        });
+
+        // Remove Fullsuit options from the selectedOptions array
+        selectedOptions.forEach((option, index) => {
+            if (option.includes("Fullsuit:")) {
+                selectedOptions.splice(index, 1);
+            }
+        });
+
+        // Update the display of selected options
+        listOfOptions();
+    }
+
+    // Calculate the total based on fur colors, fleece numbers, and minky numbers
     total = 0;
+    if (furColorInput.value) {
+        total += furColorValues[furColorInput.value];
+    }
+    if (fleeceColorInput.value) {
+        total += fleeceColorValues[fleeceColorInput.value];
+    }
+    if (minkyColorInput.value) {
+        total += minkyColorValues[minkyColorInput.value];
+    }
+
+    // Update the total display
     const totaal = document.getElementById("totaal");
     totaal.innerHTML = "€" + parseFloat(total).toFixed(2);
-
-    const options = document.querySelectorAll('.option');
-    options.forEach((option) => {
-        option.style.display = "none";
-    });
-
-    const furColorInput = document.getElementById("furColorTotal");
-    furColorInput.value = ""; // Reset the number input
-
-    selectedOptions.length = 0; // Clear the selectedOptions array
-
-    listOfOptions(); // Update the options display after unchecking
 }
