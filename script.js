@@ -152,7 +152,7 @@ function listOfOptions() {
 $(document).ready(function() {
     // Aanvinken van PARTIAL
     $('#partial').change(function() {
-        $('#heads, #handpaws, #tail, #headonlySection, #fullsuitSection, #armsleeves, #feetpaws, #feetpawsPartialOnly').fadeToggle(1);
+        $('#heads, #handpaws, #tail, #headonlySection, #fullsuitSection, #armsleeves, #feetpaws, #feetpawsPartialOnly, #extraFeetpair, #questionExtraTail ').fadeToggle(1);
     });
 
     // Aanvinken van HEAD ONLY
@@ -291,51 +291,71 @@ function uncheckAll() {
     window.location.reload();
 }
 
-// function uncheckFullsuit() {
-//     const checkbox = document.getElementById("fullsuit");
+function uncheckHeadOnly() {
+    const checkbox = document.getElementById("headonly");
 
-//     if (checkbox.checked == false) {
-//         window.location.reload();
-//     };
-// }
+    if (checkbox.checked == false) {
+        window.location.reload();
+    };
+}
+
+function uncheckPartial() {
+    const checkbox = document.getElementById("partial");
+
+    if (checkbox.checked == false) {
+        window.location.reload();
+    };
+}
 
 function uncheckFullsuit() {
-    const checkboxFullsuit = document.getElementById("fullsuit");
-    const furColorInput = document.getElementById("furColorTotal");
-    const fleeceColorInput = document.getElementById("fleeceColorTotal");
-    const minkyColorInput = document.getElementById("minkyColorTotal");
+    const checkbox = document.getElementById("fullsuit");
 
-    if (!checkboxFullsuit.checked) {
-        // Uncheck all options related to Fullsuit
-        const fullsuitOptions = document.querySelectorAll('input[data-group="Head:"], input[data-group="Handpaws:"]');
-        fullsuitOptions.forEach((option) => {
-            option.checked = false;
-        });
-
-        // Remove Fullsuit options from the selectedOptions array
-        selectedOptions.forEach((option, index) => {
-            if (option.includes("Fullsuit:")) {
-                selectedOptions.splice(index, 1);
-            }
-        });
-
-        // Update the display of selected options
-        listOfOptions();
-    }
-
-    // Calculate the total based on fur colors, fleece numbers, and minky numbers
-    total = 0;
-    if (furColorInput.value) {
-        total += furColorValues[furColorInput.value];
-    }
-    if (fleeceColorInput.value) {
-        total += fleeceColorValues[fleeceColorInput.value];
-    }
-    if (minkyColorInput.value) {
-        total += minkyColorValues[minkyColorInput.value];
-    }
-
-    // Update the total display
-    const totaal = document.getElementById("totaal");
-    totaal.innerHTML = "€" + parseFloat(total).toFixed(2);
+    if (checkbox.checked == false) {
+        window.location.reload();
+    };
 }
+
+// function uncheckFullsuit() {
+//     const checkboxFullsuit = document.getElementById("fullsuit");
+//     const furColorInput = document.getElementById("furColorTotal");
+//     const fleeceColorInput = document.getElementById("fleeceColorTotal");
+//     const minkyColorInput = document.getElementById("minkyColorTotal");
+//     const piercingInput = document.getElementById("piercingsTotal");
+
+//     if (!checkboxFullsuit.checked) {
+//         // Uncheck all options related to Fullsuit
+//         const fullsuitOptions = document.querySelectorAll('input[data-group="Head:"], input[data-group="Handpaws:"]');
+//         fullsuitOptions.forEach((option) => {
+//             option.checked = false;
+//         });
+
+//         // Remove Fullsuit options from the selectedOptions array
+//         selectedOptions.forEach((option, index) => {
+//             if (option.includes("Fullsuit:")) {
+//                 selectedOptions.splice(index, 1);
+//             }
+//         });
+
+//         // Update the display of selected options
+//         listOfOptions();
+//     }
+
+//     // Calculate the total based on fur colors, fleece numbers, and minky numbers
+//     total = 0;
+//     if (furColorInput.value) {
+//         total += furColorValues[furColorInput.value];
+//     }
+//     if (fleeceColorInput.value) {
+//         total += fleeceColorValues[fleeceColorInput.value];
+//     }
+//     if (minkyColorInput.value) {
+//         total += minkyColorValues[minkyColorInput.value];
+//     }
+//     if (piercingInput.value) {
+//         total += piercingValues[piercingInput.value];
+//     }
+
+//     // Update the total display
+//     const totaal = document.getElementById("totaal");
+//     totaal.innerHTML = "€" + parseFloat(total).toFixed(2);
+// }

@@ -19,10 +19,10 @@
     <div id="bundles">
         <h1>Bundles:</h1>
         <div id="headonlySection">
-            <input data-group="Bundle" id="headonly" placeholder="Head Only" name="product" value="1000.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Head Only + €1000.00
+            <input data-group="Bundle" id="headonly" placeholder="Head Only" name="product" value="1000.00" type="checkbox" onclick="countNumbers();listOfOptions();uncheckHeadOnly()" /> Head Only + €1000.00
         </div>
         <div id="partialSection">
-            <input data-group="Bundle" id="partial" placeholder="Partial" name="product" value="1600.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Partial + €1600.00
+            <input data-group="Bundle" id="partial" placeholder="Partial" name="product" value="1600.00" type="checkbox" onclick="countNumbers();listOfOptions();uncheckPartial()" /> Partial + €1600.00
         </div>
         <div id="fullsuitSection">
             <input data-group="Bundle" id="fullsuit" placeholder="Fullsuit" name="product" value="2800.00" type="checkbox" onclick="countNumbers();listOfOptions();uncheckFullsuit()" /> Fullsuit + €2800.00
@@ -174,7 +174,7 @@
         <div id="feetpaws">
             <h1 id="feetpawsTitle">Feetpaws:</h1>
             <div id="feetpawsPartialOnly">
-                <input data-group="Feetpaws:" placeholder="Plus extra set of Feetpaws" name="product" value="300.00" type="checkbox" onclick="countNumbers();listOfOptions()" id="feetpawsPartialYes" /> Feetpaws? + €300.00
+                <input data-group="Feetpaws:" placeholder="Partial Feetpaws" name="product" value="300.00" type="checkbox" onclick="countNumbers()" id="feetpawsPartialYes" /> Feetpaws? + €300.00
             </div>
             <div class="options" id="feetpawsOptions">
                 <h3>Feetpaw type:</h3>
@@ -252,7 +252,7 @@
                 <div class="tailFullsuit">
                     <h3>Tail attached to body?:</h3>
                     <input data-group="Tail:" placeholder="Yes, attached to body" name="product" value="20.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Yes, attached to body + €20.00<br>
-                    <input data-group="Tail:" placeholder="Yes, with zipper" name="product" value="20.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Yes, with zipper + €20.00<br>
+                    <input data-group="Tail:" placeholder="Yes, with zipper" name="product" value="25.00" type="checkbox" onclick="countNumbers();listOfOptions()" /> Yes, with zipper + €25.00<br>
                     <input data-group="Tail:" placeholder="Yes, attached to body" name="product" value="0" type="checkbox" onclick="countNumbers();listOfOptions()" /> No + €0.00
                 </div>
 
@@ -293,7 +293,7 @@
     <div class="totalInfo">
         <p id="choices">You have selected:</p>
         <span id="totaal">€0.00</span><br><br>
-        <button onclick="uncheckAll()">Uncheck All</button>
+        <button onclick="uncheckAll()">Reset everything</button>
         <!-- <input placeholder="Head" value="€0.00" readonly="readonly" type="text" name="total" /> -->
         <!-- <button onclick="getValue()">Get Value</button> -->
     </div>
