@@ -1,9 +1,16 @@
+body {
+    font-family: "Fauna One", Sans-serif;
+    color: #0D0934;
+    background-color: #C2D7EF;
+}
+
 div.totalInfo {
     position: fixed;
     top: 0;
     right: 0;
     padding: 1rem;
-    background-color: aquamarine;
+    background-color: #122148;
+    color: #c2d7ef;
     width: 15rem;
     max-height: 100vh;
     overflow: auto;
