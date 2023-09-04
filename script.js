@@ -6,9 +6,12 @@ function countNumbers() {
     var fleeceColor = document.getElementById("fleeceColorTotal").value;
     var minkyColor = document.getElementById("minkyColorTotal").value;
     var piercingTotal = document.getElementById("piercingsTotal").value;
+    var piercingTotalSeperate = document.getElementById("piercingsTotalSeperate").value;
     const eyelids = document.getElementById('eyelids');
     const checkboxEyelid = document.getElementById('extraEyelidsBox');
+    const checkboxEyelidSeperate = document.getElementById('extraEyelidsBoxSeperate');
     const checkboxEyelid2 = document.getElementById('extraEyelidsBox2');
+    const checkboxEyelid2Seperate = document.getElementById('extraEyelidsBox2Seperate');
 
     var input = document.getElementsByName("product");
     var totalAmount = 0;
@@ -86,6 +89,11 @@ function countNumbers() {
         totaal.innerHTML = "€" + parseFloat(totalAmount);
     }
 
+    if (piercingTotalSeperate in piercingTotalValues) {
+        totalAmount += piercingTotalValues[piercingTotalSeperate];
+        totaal.innerHTML = "€" + parseFloat(totalAmount);
+    }
+
     // Add every price to a total price
     for (var i = 0; i < input.length; i++) {
         if (input[i].checked) {
@@ -150,6 +158,26 @@ function listOfOptions() {
 }
 
 $(document).ready(function() {
+    // Aanvinken van SEPERATES
+    $('#seperateHeads').change(function() {
+        $('#headsSeperate').fadeToggle(1);
+    });
+    $('#seperateHandpaws').change(function() {
+        $('#handpawsSeperate').fadeToggle(1);
+    });
+    $('#seperateFeetpaws').change(function() {
+        $('#feetpawsSeperate').fadeToggle(1);
+    });
+    $('#seperateTail').change(function() {
+        $('#tailSeperate').fadeToggle(1);
+    });
+    $('#seperateBody').change(function() {
+        $('#bodySeperate').fadeToggle(1);
+    });
+    $('#seperateArmsleeves').change(function() {
+        $('#armsleevesSeperate').fadeToggle(1);
+    });
+
     // Aanvinken van PARTIAL
     $('#partial').change(function() {
         $('#heads, #handpaws, #tail, #headonlySection, #fullsuitSection, #armsleeves, #feetpaws, #feetpawsPartialOnly, #extraFeetpair, #questionExtraTail ').fadeToggle(1);
@@ -171,6 +199,14 @@ $(document).ready(function() {
     $('#movingJawChoice').change(function() {
         $('#bucketheadChoice').fadeToggle(1);
     });
+    // HEAD OPTIONS SEPERATE
+    $('#bucketheadChoiceSeperate').change(function() {
+        $('#movingJawChoiceSeperate').fadeToggle(1);
+        $('#bucketheadOnlySeperate').prop('disabled', (i, v) => !v);
+    });
+    $('#movingJawChoiceSeperate').change(function() {
+        $('#bucketheadChoiceSeperate').fadeToggle(1);
+    });
 
     // Aanvinken kleuren STOF
     $('#fleeceChoice').change(function() {
@@ -184,14 +220,28 @@ $(document).ready(function() {
     $('#piercingChoice').change(function() {
         $('#piercingsGroup').fadeToggle(1);
     });
+
+    // Aanvinken piercings SEPERATE
+    $('#piercingChoiceSeperate').change(function() {
+        $('#piercingsGroupSeperate').fadeToggle(1);
+    });
     // Aanvinken eyelids
     $('#eyelids').change(function() {
         $('#extraEyelids').fadeToggle(1);
         $('#multipleEyelidsChoice').fadeToggle(1);
     });
+    // Aanvinken eyelids SEPERATE
+    $('#eyelidsSeperate').change(function() {
+        $('#extraEyelidsSeperate').fadeToggle(1);
+        $('#multipleEyelidsChoiceSeperate').fadeToggle(1);
+    });
     // Extra tongues
     $('#tongues').change(function() {
         $('#extraTongues, #extraTongues2').fadeToggle(1);
+    });
+    // Extra tongues SEPERATE
+    $('#tonguesSeperate').change(function() {
+        $('#extraTonguesSeperate, #extraTongues2Seperate').fadeToggle(1);
     });
 
     // VERWIJDER ALLE ANDERE OPTIES OM HET MAKKELIJKER TE MAKEN
@@ -202,6 +252,13 @@ $(document).ready(function() {
     $('#extraEyelids').change(function() {
         $('#extraEyelids2').fadeToggle(1);
     });
+    // Eyelids SEPERATE
+    $('#multipleEyelidsChoiceSeperate').change(function() {
+        $('#fixedEyelidsChoiceSeperate').fadeToggle(1);
+    });
+    $('#extraEyelidsSeperate').change(function() {
+        $('#extraEyelids2Seperate').fadeToggle(1);
+    });
 
     // Paw pads
     $('#handpawsPadsChoice').change(function() {
@@ -209,6 +266,14 @@ $(document).ready(function() {
     });
     $('#handpawsNoPadsChoice').change(function() {
         $('#handpawsPadsChoice').fadeToggle(1);
+    });
+
+    // Paw pads SEPERATE
+    $('#handpawsPadsChoiceSeperate').change(function() {
+        $('#handpawsNoPadsChoiceSeperate').fadeToggle(1);
+    });
+    $('#handpawsNoPadsChoiceSeperate').change(function() {
+        $('#handpawsPadsChoiceSeperate').fadeToggle(1);
     });
 
     // Hair
@@ -233,6 +298,28 @@ $(document).ready(function() {
         $('#longHairChoice').fadeToggle(1);
     });
 
+    // Hair SEPERATE
+    $('#noHairChoiceSeperate').change(function() {
+        $('#hairPoofChoiceSeperate').fadeToggle(1);
+        $('#longHairChoiceSeperate').fadeToggle(1);
+        $('#kanekalonHairChoiceSeperate').fadeToggle(1);
+    });
+    $('#hairPoofChoiceSeperate').change(function() {
+        $('#noHairChoiceSeperate').fadeToggle(1);
+        $('#longHairChoiceSeperate').fadeToggle(1);
+        $('#kanekalonHairChoiceSeperate').fadeToggle(1);
+    });
+    $('#longHairChoiceSeperate').change(function() {
+        $('#noHairChoiceSeperate').fadeToggle(1);
+        $('#hairPoofChoiceSeperate').fadeToggle(1);
+        $('#kanekalonHairChoiceSeperate').fadeToggle(1);
+    });
+    $('#kanekalonHairChoiceSeperate').change(function() {
+        $('#noHairChoiceSeperate').fadeToggle(1);
+        $('#hairPoofChoiceSeperate').fadeToggle(1);
+        $('#longHairChoiceSeperate').fadeToggle(1);
+    });
+
     // Body type
     $('#plantigradeChoice').change(function() {
         $('#digitigradeChoice').fadeToggle(1);
@@ -247,10 +334,42 @@ $(document).ready(function() {
         $('#digitigradeChoice').fadeToggle(1);
     });
 
+    // Body type SEPERATE
+    $('#plantigradeChoiceSeperate').change(function() {
+        $('#digitigradeChoiceSeperate').fadeToggle(1);
+        $('#customBodyChoiceSeperate').fadeToggle(1);
+    });
+    $('#digitigradeChoiceSeperate').change(function() {
+        $('#plantigradeChoiceSeperate').fadeToggle(1);
+        $('#customBodyChoiceSeperate').fadeToggle(1);
+    });
+    $('#customBodyChoiceSeperate').change(function() {
+        $('#plantigradeChoiceSeperate').fadeToggle(1);
+        $('#digitigradeChoiceSeperate').fadeToggle(1);
+    });
+
     // Feetpaws type
     $('#indoor').change(function() {
         $('#outdoor').fadeToggle(1);
         $('#shoesBase').fadeToggle(1);
+    });
+
+    // Feetpaws type EXTRA
+    $('#indoorExtra').change(function() {
+        $('#outdoorExtra').fadeToggle(1);
+        $('#shoesBaseExtra').fadeToggle(1);
+    });
+
+    // Feetpaws type SEPERATE
+    $('#indoorSeperate').change(function() {
+        $('#outdoorSeperate').fadeToggle(1);
+        $('#shoesBaseSeperate').fadeToggle(1);
+    });
+
+    // Feetpaws type EXTRA SEPERATE
+    $('#indoorExtra').change(function() {
+        $('#outdoorExtraSeperate').fadeToggle(1);
+        $('#shoesBaseExtraSeperate').fadeToggle(1);
     });
 
     // Feetpaws base
@@ -265,15 +384,59 @@ $(document).ready(function() {
         });
     });
 
+    // Feetpaws base
+    $('#outdoorExtra').change(function() {
+        $('#indoorExtra').fadeToggle(1);
+
+        $('#slippersBaseExtra').change(function() {
+            $('#shoesBaseExtra').fadeToggle(1);
+        });
+        $('#shoesBaseExtra').change(function() {
+            $('#slippersBaseExtra').fadeToggle(1);
+        });
+    });
+
+    // Feetpaws base SEPERATE
+    $('#outdoorSeperate').change(function() {
+        $('#indoorSeperate').fadeToggle(1);
+
+        $('#slippersBaseSeperate').change(function() {
+            $('#shoesBaseSeperate').fadeToggle(1);
+        });
+        $('#shoesBaseSeperate').change(function() {
+            $('#slippersBaseSeperate').fadeToggle(1);
+        });
+    });
+
+    // Feetpaws base EXTRA SEPERATE
+    $('#outdoorExtraSeperate').change(function() {
+        $('#indoorExtraSeperate').fadeToggle(1);
+
+        $('#slippersBaseExtraSeperate').change(function() {
+            $('#shoesBaseExtraSeperate').fadeToggle(1);
+        });
+        $('#shoesBaseExtraSeperate').change(function() {
+            $('#slippersBaseExtraSeperate').fadeToggle(1);
+        });
+    });
+
     $('#feetpawsExtraYes').change(function() {
         $('#feetpawsExtra').fadeToggle(1);
+    });
+
+    $('#feetpawsExtraYesSeperate').change(function() {
+        $('#feetpawsExtraSeperate').fadeToggle(1);
     });
 
     $('#feetpawsPartialYes').change(function() {
         $('#feetpawsOptions').fadeToggle(1);
     });
 
+    $('#feetpawsPartialYesSeperate').change(function() {
+        $('#feetpawsOptionsSeperate').fadeToggle(1);
+    });
 
+    // EXTRAS
     $('#tailExtraYes').change(function() {
         $('#tailExtra').fadeToggle(1);
     });
@@ -284,6 +447,19 @@ $(document).ready(function() {
 
     $('#feetpawsYes').change(function() {
         $('#feetpawsOptions').fadeToggle(1);
+    });
+
+    // EXTRAS
+    $('#tailExtraYesSeperate').change(function() {
+        $('#tailExtraSeperate').fadeToggle(1);
+    });
+
+    $('#armsleevesYesSeperate').change(function() {
+        $('#armsleevesOptionsSeperate').fadeToggle(1);
+    });
+
+    $('#feetpawsYesSeperate').change(function() {
+        $('#feetpawsOptionsSeperate').fadeToggle(1);
     });
 });
 

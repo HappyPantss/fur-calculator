@@ -46,16 +46,46 @@ p {
 #fleeceTotalColors,
 #minkyTotalColors,
 #piercingsGroup,
+#piercingsGroupSeperate,
 #extraEyelids,
+#extraEyelidsSeperate,
 #extraEyelids2,
+#extraEyelids2Seperate,
 #extraTongues,
+#extraTonguesSeperate,
 #extraTongues2,
+#extraTongues2Seperate,
 #feetpawsExtra,
+#feetpawsExtraSeperate,
 #tailExtra,
+#tailExtraSeperate,
 .tailFullsuit,
 #extraFeetpair,
-#questionExtraTail {
+#questionExtraTail,
+#headsSeperate,
+#handpawsSeperate,
+#feetpawsSeperate,
+#tailSeperate,
+#bodySeperate,
+#armsleevesSeperate {
     display: none;
+}
+
+#headsSeperate,
+#handpawsSeperate,
+#feetpawsSeperate,
+#feetpawsExtraSeperate,
+#tailSeperate,
+#tailExtraSeperate,
+#bodySeperate,
+#armsleevesSeperate {
+    /* background-color: #122148; */
+    border: 3px solid #122148;
+    border-radius: 1rem;
+    /* color: #c2d7ef; */
+    padding: 1rem;
+    margin: 1rem;
+    width: 40rem;
 }
 
 
